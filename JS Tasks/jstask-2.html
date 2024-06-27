@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort String Alphabetically</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sort String Alphabetically</h1>
+
+    <div>
+        <label for="inputString">Enter a string:</label>
+        <input type="text" id="inputString" placeholder="Enter a string">
+        <button onclick="sortString()">Sort</button>
+    </div>
+
+    <div class="result" id="output"></div>
+
+    <script>
+        function sortString() {
+            var inputElement = document.getElementById('inputString');
+            var inputString = inputElement.value.trim();
+
+            // Check if the input string is not empty
+            if (inputString !== '') {
+                // Sort the string alphabetically
+                var sortedString = inputString.split('').sort().join('');
+
+                // Display the sorted string
+                var outputElement = document.getElementById('output');
+                outputElement.textContent = 'Sorted string: ' + sortedString;
+            } else {
+                // If input is empty, show a message
+                var outputElement = document.getElementById('output');
+                outputElement.textContent = 'Please enter a valid string.';
+            }
+        }
+    </script>
+</body>
+</html>

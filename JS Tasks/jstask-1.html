@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Reverse Number</title>
+    <style>
+        /* Optional: Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reverse Number</h1>
+    <div>
+        <label for="num">Enter a number:</label>
+        <input type="number" id="num">
+    </div>
+    <button onclick="reverseNumber()">Reverse</button>
+    <div id="result"></div>
+
+    <!-- JavaScript to reverse number -->
+    <script>
+        function reverseNumber() {
+            var num = document.getElementById('num').value;
+            var reversedNumber = reverseNumberFunction(num);
+            document.getElementById('result').textContent = "Reversed Number: " + reversedNumber;
+        }
+
+        function reverseNumberFunction(x) {
+            var reversedString = x.toString().split('').reverse().join('');
+            var reversedNumber = parseInt(reversedString);
+            return reversedNumber;
+        }
+    </script>
+</body>
+</html>
